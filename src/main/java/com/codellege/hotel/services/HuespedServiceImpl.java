@@ -30,6 +30,10 @@ public class HuespedServiceImpl implements IHuespedService<HuespedModel, Long>{
 
     @Override
     public void delete(long id) {
-        huespedRepo.deleteById(id);
+        try {
+            huespedRepo.deleteById(id);
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }

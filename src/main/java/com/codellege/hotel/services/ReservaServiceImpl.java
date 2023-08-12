@@ -30,6 +30,10 @@ public class ReservaServiceImpl implements IReservaService<ReservaModel, Long>{
 
     @Override
     public void delete(long id) {
-        reservaRepo.deleteById(id);
+        try {
+            reservaRepo.deleteById(id);
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
